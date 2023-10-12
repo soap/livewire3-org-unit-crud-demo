@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +26,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/units/{unit?}', [Controllers\OrganizationUnitController::class, 'index'])
-        ->name('units.index');
+    Route::get('/unit-directory/{unit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit-directory');
 });

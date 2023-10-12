@@ -15,8 +15,9 @@ class FirstUserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'first_name' => env('INITIAL_USER_FIRST_NAME', 'John'),
-            'last_name' => env('INITIAL_USER_LAST_NAME', 'Doe'),
+            'name' => env('INITIAL_USER_NAME', 'John Doe'),
+            //'first_name' => env('INITIAL_USER_FIRST_NAME', 'John'),
+            //'last_name' => env('INITIAL_USER_LAST_NAME', 'Doe'),
             'email' => env('INITIAL_USER_EMAIL', 'john.doe@gmail.com'),
             'password' => env('INITIAL_USER_PASSWORD_HASH', Hash::make('password'))
         ]);

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('name_titles', function (Blueprint $table) {
+        Schema::create('job_roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('short_name', 20)->nullable();
-            $table->string('gender_type', 10)->default('unrelated')->comment('one of male, female, unrelated');
-            $table->boolean('is_active')->default(true);
+            $table->string('name');
+            $table->smallInteger('ordering')->unsigned();
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('name_titles');
+        Schema::dropIfExists('job_roles');
     }
 };

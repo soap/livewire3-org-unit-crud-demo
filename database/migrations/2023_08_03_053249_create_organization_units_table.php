@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('unit_roles', function (Blueprint $table) {
+        Schema::create('organization_units', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->index();
-            $table->string('short_name')->nullable();
-            $table->unsignedInteger('level')->default(1);
+            $table->string('name');
+            $table->string('short_name');
+            $table->boolean('is_company')->default(false);
+            $table->nestedSet();
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('unit_roles');
+        Schema::dropIfExists('organization_units');
     }
 };

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Person>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\JobPosition>
  */
-class PersonFactory extends Factory
+class JobPositionFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,7 @@ class PersonFactory extends Factory
     public function definition(): array
     {
         return [
-            'name_title_id' => rand(1, 3),
-            'first_name' => $this->faker->firstName(),
-            'last_name' => $this->faker->lastName(),
+            //
         ];
     }
 }

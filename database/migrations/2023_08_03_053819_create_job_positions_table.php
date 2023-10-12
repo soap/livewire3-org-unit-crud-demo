@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('organization_units', function (Blueprint $table) {
+        Schema::create('job_positions', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->index();
-            $table->string('short_name')->nullable();
-            $table->boolean('is_root')->default(false);
-            $table->nestedSet();
+            $table->string('name');
+            $table->string('short_name');
+            $table->smallInteger('job_level')->unsigned();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('organization_units');
+        Schema::dropIfExists('job_positions');
     }
 };
