@@ -8,7 +8,7 @@ Laravel application to domonstrate Livewire version CRUD using wire-elements/mod
   ```
 - Change directory to the application folder.
   ```
-    cd livewire-organization-crud-demo
+    cd livewire3-org-unit-crud-demo
   ```
 - Install PHP packages.
   ```
